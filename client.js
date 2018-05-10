@@ -23,7 +23,7 @@ if (cluster.isMaster) {
 
     // Fork workers.
     console.log('Available Cores: ' + numCPUs);
-    for (let i = 0; i < numCPUs * 2; i++) {
+    for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 
@@ -64,7 +64,7 @@ if (cluster.isMaster) {
 } else {
     // console.log(`Worker ${process.pid} started`);
 
-    for (let i = 0; i < 64; i++) {
+    for (let i = 0; i < 10; i++) {
         timedRequest();
     }
 }
