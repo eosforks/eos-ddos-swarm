@@ -64,7 +64,7 @@ if (cluster.isMaster) {
 } else {
     // console.log(`Worker ${process.pid} started`);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
         timedRequest();
     }
 }
@@ -77,7 +77,7 @@ function resetCounter() {
 
 function timedRequest() {
     const request_options = {
-        uri: 'http://nlb.hkeos.com:8886/v1/chain/get_info',
+        uri: 'http://nlb1-d7fce5c67fb4bd68.elb.ap-southeast-1.amazonaws.com:8886/v1/chain/get_info',
         json: false,
         method: "GET",
         // localAddress: '',
